@@ -63,6 +63,8 @@ public class Spiral {
 	             System.out.println();
 	            }
 	        int x=0,y=0;
+	        int a=0,b=0;
+	        
 	        for(int i=0;i<n;i++)
 	        {
 	            for(int j=0;j<n;j++)
@@ -74,8 +76,8 @@ public class Spiral {
 	                }
 	      
 	        }
-	       // System.out.println(x+" "+y);
-	        int a=0,b=0;
+	       System.out.println(x+" "+y);
+	        
 	        for(int i=0;i<n;i++)
 	        {
 	            for(int j=0;j<n;j++)
@@ -87,8 +89,13 @@ public class Spiral {
 	                }
 	      
 	        }
-	        //System.out.println(a+" "+b);
-	        System.out.println((a-x)+" "+(b-y));
+	        System.out.println(a+" "+b);
+//	        if(((a-x)>0 && (b-y)>0)|((a-x)<0 && (b-y)<0)){
+//	        System.out.println(Math.abs((a-x)+(b-y)));
+//	        }else {
+//				System.out.println(Math.abs((a-x)-(b-y)));
+//			}
+	        System.out.println(Math.abs(a-x)+Math.abs(b-y));
 	}
 
 }
