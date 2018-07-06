@@ -7,8 +7,7 @@ import java.io.InputStreamReader;
 public class Spiral {
 
 	public static void main(String[] args) throws IOException{
-		// TODO Auto-generated method stub
-		  BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+				  BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 	        System.out.print("Enter the number of elements : ");
 	        int n=Integer.parseInt(br.readLine());
 	        System.out.print("Enter the find elements : ");
@@ -53,15 +52,15 @@ public class Spiral {
 	            }
 
 	        /* Printing the Circular matrix */
-	        System.out.println("The Circular Matrix is:");
-	        for(int i=0;i<n;i++)
-	            {
-	                for(int j=0;j<n;j++)
-	                    {
-	                        System.out.print(A[i][j]+ "\t");
-	                    }
-	             System.out.println();
-	            }
+//	        System.out.println("The Circular Matrix is:");
+//	        for(int i=0;i<n;i++)
+//	            {
+//	                for(int j=0;j<n;j++)
+//	                    {
+//	                        System.out.print(A[i][j]+ "\t");
+//	                    }
+//	             System.out.println();
+//	            }
 	        int x=0,y=0;
 	        int a=0,b=0;
 	        
@@ -72,29 +71,16 @@ public class Spiral {
 	                    if(A[i][j]==m) {
 	                    x=i;
 	                    y=j;
-	                    }
-	                }
-	      
-	        }
-	       System.out.println(x+" "+y);
-	        
-	        for(int i=0;i<n;i++)
-	        {
-	            for(int j=0;j<n;j++)
-	                {
+	       
+	       }
 	                    if(A[i][j]==1) {
-	                    a=i;
-	                    b=j;
-	                    }
+		                    a=i;
+		                    b=j;
+		                    }
 	                }
 	      
 	        }
-	        System.out.println(a+" "+b);
-//	        if(((a-x)>0 && (b-y)>0)|((a-x)<0 && (b-y)<0)){
-//	        System.out.println(Math.abs((a-x)+(b-y)));
-//	        }else {
-//				System.out.println(Math.abs((a-x)-(b-y)));
-//			}
+	      
 	        System.out.println(Math.abs(a-x)+Math.abs(b-y));
 	}
 
