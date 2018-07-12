@@ -3,14 +3,14 @@ package com.training.composite;
 import java.util.List;
 
 public class Customer {
-private int CustId;
+private int custId;
 private String custName;
 private List<Customer> references;
 public int getCustId() {
-	return CustId;
+	return custId;
 }
 public void setCustId(int custId) {
-	CustId = custId;
+	this.custId = custId;
 }
 public String getCustName() {
 	return custName;
@@ -25,13 +25,13 @@ public void setReferences(List<Customer> references) {
 	this.references = references;
 }
 public Customer(int custId, String custName) {
-	super();
-	CustId = custId;
+	
+	this.custId = custId;
 	this.custName = custName;
 }
 @Override
 public String toString() {
-	return "Customer [CustId=" + CustId + ", custName=" + custName + "]";
+	return "Customer [CustId=" + custId + ", custName=" + custName + "]";
 }
 public void addReference(Customer customer){
 	System.out.println(customer);

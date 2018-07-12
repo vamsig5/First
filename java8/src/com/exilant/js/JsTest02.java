@@ -11,7 +11,7 @@ public class JsTest02 {
 public static void main(String[] args) throws FileNotFoundException, ScriptException {
 	ScriptEngineManager engineManager=new ScriptEngineManager();
 	ScriptEngine nashorn=engineManager.getEngineByName("nashorn");
-	nashorn.eval(new FileReader("external.js"));
+	nashorn.eval(new FileReader("/java8/resource/com/js/external.js"));
 	System.out.println(nashorn.eval("fntest()"));
 }
 }
