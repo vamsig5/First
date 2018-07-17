@@ -10,6 +10,7 @@ public Cache(){
 }
 public Service getService(String serviceName){
 for (Service service : services) {
+	System.out.println(service.getName());
 	if(service.getName().equalsIgnoreCase(serviceName)){
 		System.out.println("Returning Cached service "+serviceName+" object");
 		return service;

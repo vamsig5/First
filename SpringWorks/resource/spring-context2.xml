@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd" default-init-method="ginit" default-destroy-method="gdestroy">
+	   <!--  when initialization happens spring will look if any class here implements bpp -->
+	   
+	   <bean class="com.springt.bpp.EmpBeanPostProcessor"></bean>
+	   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+	   <property name="location">
+	   <value>employeeinfo.properties</value>
+	   </property>
+	   
+	   
+	   </bean>
+	   
+  <!--  by defalt when bean is created it will be singleton -->   	
+<bean id="emp" class="com.springt.employee.Employee" >
+<!--the data can be supplied to the bean either with setter or constructor -->
+<!--  autoboxing is taken care by spring -->
+<property name="empId" value="${emp.empid}"></property>
+<property name="empName" value="${emp.empname}"></property>
+<property name="empSal" value="${emp.empsal}"></property>
+</bean>
+
+
+</beans>

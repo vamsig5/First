@@ -20,7 +20,7 @@ public class Users implements IObserver{
 	
 	@Override
 	public void update() {
-		buyMobile();
+		buyMobile(observable);
 	}
 
 	public void unSubscribe(IObserver observer){
@@ -29,8 +29,14 @@ public class Users implements IObserver{
 
 
 
-	public void buyMobile( ) {
-System.out.println("huury buy   now "+name);		
+	public void buyMobile(IObservable observable ) {
+		if(observable.getClass().getName().contains("Oneplus6T")){
+			System.out.println("huury buy Oneplus6T  now "+name);
+		}else if(observable.getClass().getName().contains("Iphone")){
+			System.out.println("hurry buy Iphone6T  now "+name);
+		}
+		
+		
 	}
 
 }
