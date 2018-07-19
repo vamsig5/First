@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:aop="http://www.springframework.org/schema/aop"   
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   
+       http://www.springframework.org/schema/beans/spring-beans.xsd   
+       http://www.springframework.org/schema/aop   
+       http://www.springframework.org/schema/aop/spring-aop.xsd">  
+  <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+  <!-- all aspect entry -->
+ <!-- <bean class="com.springt.aop.banking.LogAspectAfter"></bean> -->
+ <bean class="com.springt.aop.banking.LogAspectAround"></bean>
+	
+<bean id="account1" class="com.springt.aop.model.Account"> 
+<property name="accNo" value="101"></property>
+<property name="accName" value="vamsi"></property>
+<property name="balance" value="1000"></property>
+</bean>
+<bean id="account2" class="com.springt.aop.model.Account"> 
+<property name="accNo" value="102"></property>
+<property name="accName" value="uma"></property>
+<property name="balance" value="2000"></property>
+</bean>
+<bean id="sbAccount" class="com.springt.aop.model.SBAccount">
+<property name="acc" ref="account1"></property>
+</bean>
+
+<bean id="caAccount" class="com.springt.aop.model.CAAccount">
+<property name="account" ref="account2"></property>
+</bean>
+
+<bean id="banking" class="com.springt.aop.service.BankingService" autowire="byName">
+<property name="sbAccount" ref="sbAccount"></property>
+<property name="caAccount" ref="caAccount"></property>
+</bean>
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="questionBank" class="com.springt.collections.QuestionBank">
+		<property name="question" value="Inheritence is available in ..."></property>
+		<property name="options">
+			<list>
+				<value>Java</value>
+				<value>C</value>
+				<value>C++</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="addressSet" class="com.springt.collections.AddressSet">
+
+		<property name="addresses">
+			<set>
+				<value>Bangalore</value>
+				<value>Tirupati</value>
+				<value>Nellore</value>
+			</set>
+
+
+		</property>
+
+	</bean>
+	<bean id="accountMap" class="com.springt.collections.AccountMap">
+		<property name="accountMap">
+			<map>
+				<entry key="vamsi" value="100"></entry>
+				<entry key="hanu" value="110"></entry>
+				<entry key="uma" value="120"></entry>
+
+
+			</map>
+
+
+		</property>
+	</bean>
+	<bean id="myCollection" class="com.springt.collections.MyCollection">
+
+		<property name="questionBank" ref="questionBank"></property>
+		<property name="addresses" ref="addressSet"></property>
+		<property name="accountMap" ref="accountMap"></property>
+
+	</bean>
+
+
+</beans>
