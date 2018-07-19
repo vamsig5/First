@@ -5,14 +5,14 @@ package com.springt.autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Component;
-@Component(value="mobile")
+
 public class Mobile {
 	
-	@Autowired	
-private Camera camera;
-	@Autowired
+	
+public Camera camera;
+	
 private Screen screen;
-	@Autowired
+	
 private Speaker speaker;
 
 public Mobile() {
@@ -22,7 +22,7 @@ public Mobile() {
 public Camera getCamera() {
 	return camera;
 }
-
+@Autowired
 public void setCamera(Camera camera) {
 	this.camera = camera;
 }
@@ -30,14 +30,14 @@ public void setCamera(Camera camera) {
 public Screen getScreen() {
 	return screen;
 }
-
+@Autowired
 public void setScreen(Screen screen) {
 	this.screen = screen;
 }
 public Speaker getSpeaker() {
 	return speaker;
 }
-
+@Autowired
 public void setSpeaker(Speaker speaker) {
 	this.speaker = speaker;
 }

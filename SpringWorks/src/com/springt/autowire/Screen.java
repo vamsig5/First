@@ -2,7 +2,7 @@ package com.springt.autowire;
 
 import org.springframework.stereotype.Component;
 
-@Component(value="screen")
+
 public class Screen {
 
 private int len;
@@ -21,13 +21,6 @@ public Screen() {
 System.out.println("Creating screen "+this);
 }
 
-//public String getGlasstype() {
-//	return glassType;
-//}
-//
-//public void setGlasstype(String glassType) {
-//	this.glassType = glassType;
-//}
 
 public int getLen() {
 	return len;

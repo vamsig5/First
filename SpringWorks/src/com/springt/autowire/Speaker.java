@@ -2,7 +2,7 @@ package com.springt.autowire;
 
 import org.springframework.stereotype.Component;
 
-@Component(value="speaker")
+@Component
 public class Speaker {
 private String type;
 private int volLevels;

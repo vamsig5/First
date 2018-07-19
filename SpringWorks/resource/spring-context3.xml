@@ -6,9 +6,13 @@
 	   
 <context:annotation-config></context:annotation-config>
 <context:component-scan base-package="com.springt.autowire"></context:component-scan>
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+	   <property name="location">
+	   <value>mobileinfo.properties</value>
+	   </property>
+</bean>
 
-
-<bean id="mobile" class="com.springt.autowire.Mobile" >
+<bean id="mobile" class="com.springt.autowire.Mobile" autowire="byName" >
 
 
 </bean>
