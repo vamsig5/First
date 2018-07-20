@@ -18,11 +18,12 @@ public class UserDAOService {
 		users.add(new User(102, "uma", new Date()));
 		users.add(new User(103, "hanu", new Date()));
 	}
-	public static int userCount=103;
+	public static int userCount=users.size()+100;
 	public List<User> getAllUsers() {
 		return users;
 	}
 	public User saveUser(User user) {
+
 	if (user.getUserId() == null) {
 		user.setUserId(++userCount);
 	}	
