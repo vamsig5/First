@@ -4,7 +4,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import com.springt.employee.Employee;
+import com.springt.entity.Employee;
+
 
 public interface IEmployeeDAO {
 
