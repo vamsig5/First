@@ -9,7 +9,9 @@ import org.apache.kafka.common.serialization.StringSerializer;
 
 
 
-public class KafkaClient {
+
+
+public class KafkaClient  {
 
 	public static void main(String[] args) {
 		
@@ -18,6 +20,7 @@ public class KafkaClient {
 		//identify kafka server
 		properties.setProperty("bootstrap.servers", "localhost:9092");
 		properties.setProperty("key.serializer",StringSerializer.class.getName() );
+		
 		properties.setProperty("value.serializer", StringSerializer.class.getName());
 		
 		//for acks,retries etc..
