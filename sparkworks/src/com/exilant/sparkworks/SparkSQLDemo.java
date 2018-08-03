@@ -115,6 +115,9 @@ public class SparkSQLDemo {
 	Dataset<Row> sqlDataField=sparkSession.read().format("jdbc").options(jdbcConnectParams).load();
 	sqlDataField.show();
 	
+	//JavaSparkContext jsc=new JavaSparkContext(sparkSession.sparkContext());
+	
+	
 	}
 
 }
