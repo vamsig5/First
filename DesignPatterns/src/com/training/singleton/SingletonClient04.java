@@ -7,11 +7,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-//to persist the data to file with OOs/OIS
+//to persist the data to file with OOS/OIS
 public class SingletonClient04 {
 public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-	Singleton singleton
-	=Singleton.getInstance();
+	Singleton singleton=Singleton.getInstance();
 	ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream("sample.ser"));
 	out.writeObject(singleton);
 	System.out.println("object saved with hashcode "+singleton);

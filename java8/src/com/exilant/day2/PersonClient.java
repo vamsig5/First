@@ -16,7 +16,7 @@ public class PersonClient {
 		persons.forEach(print);
 		System.out.println("------------");
 		//PrintConsumer pConsumer=new PrintConsumer();
-	
+	persons.forEach(PrintConsumer::print);
 
 	}
 	

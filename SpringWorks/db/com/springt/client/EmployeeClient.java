@@ -12,9 +12,9 @@ public class EmployeeClient {
 		ApplicationContext context=new ClassPathXmlApplicationContext("db-context.xml");
 		IEmployeeDAO employeeDAO=(IEmployeeDAO)context.getBean("employeeDao");
 		Employee emp1=new Employee(103, "hanu", 6000);
-		//employeeDAO.insertEmployee(emp1);
- // System.out.println(employeeDAO.getEmployee(101));
-		//System.out.println(employeeDAO.getAllEmps());
+		employeeDAO.insertEmployee(emp1);
+  System.out.println(employeeDAO.getEmployee(101));
+		System.out.println(employeeDAO.getAllEmps());
 		employeeDAO.deleteEmployee(104);
 		
 	}

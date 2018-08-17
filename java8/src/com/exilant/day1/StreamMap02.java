@@ -41,7 +41,8 @@ public class StreamMap02 {
 	
 	public static List<PriorityCustomer> filterCustomers3(List<Customer> customers){
 		List<PriorityCustomer> priorityCustomers=customers.stream().map(temp->{
-	return new PriorityCustomer(temp.getCustid(),temp.getCustName(),temp.getCustPurchases()>0&&temp.getCustPurchases()<6000?"silver":temp.getCustPurchases()>6000&&temp.getCustPurchases()<7000?"Gold":"Platinum");
+	return new PriorityCustomer(temp.getCustid(),temp.getCustName(),
+			temp.getCustPurchases()>0&&temp.getCustPurchases()<6000?"silver":temp.getCustPurchases()>6000&&temp.getCustPurchases()<7000?"Gold":"Platinum");
 	
 		}).collect(Collectors.toList());
 		return priorityCustomers;

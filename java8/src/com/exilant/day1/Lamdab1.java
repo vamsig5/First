@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 public class Lamdab1 {
 
@@ -53,6 +54,12 @@ public class Lamdab1 {
 		//sum in jdk1.8
 		System.out.println("-------in jdk1.8-------");
          System.out.println(list1.stream().map(e->e*2).reduce((res,e)->res+e));
+         
+//        Stream<String> stream1 = Stream.generate(() -> {return "abc";});
+//       stream1.forEach(System.out::println);
+//         Stream<String> stream2 = Stream.iterate("abc", (i) -> i);
+         
+         
 		
 	}
 

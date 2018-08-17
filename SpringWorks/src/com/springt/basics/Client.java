@@ -13,6 +13,7 @@ public class Client {
 		ApplicationContext factory=new ClassPathXmlApplicationContext("spring-context.xml");
 		HelloService hello=(HelloService)factory.getBean("default",HelloService.class);
 		System.out.println(hello.sayHello());
+		System.out.println(hello.sayHello("sai", "mumbai"));
 	}
 
 }

@@ -22,7 +22,7 @@ public String helloWorld(){
 	}
 	
 	//http://localhost/hello/vamsi
-	@GetMapping(path="/hello/path/{name}")
+	@GetMapping(path="/hello/{name}")
 	public HelloWorld helloPathVariable(@PathVariable String name){
 		return new HelloWorld("Hello Mr."+name);
 	}

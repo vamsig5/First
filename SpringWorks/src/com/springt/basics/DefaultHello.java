@@ -41,7 +41,7 @@ private String city;
 	//the value for this is given by configuration file
 	public String sayHello(String name, String city) {
 		
-		String mystr[]={"hello Mr %s","how r u","Mr %s, ur city is beatiful %s"};
+		String mystr[]={"hello Mr %s","how r u","Mr %s, ur  %s city is beatiful "};
 		int random=(int)(Math.random()*3);
 		System.out.println(random);
 		return String.format(mystr[random], name,city);
