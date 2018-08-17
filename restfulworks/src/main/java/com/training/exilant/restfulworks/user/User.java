@@ -6,6 +6,7 @@ public class User {
 	private Integer userId;
 	private String uname;
 	private Date birthDate;
+	private int count;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
