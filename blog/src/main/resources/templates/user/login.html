@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="site-head">
+<meta charset="UTF-8">
+ <link rel="stylesheet" href="../static/css/styles.css"
+          th:href="@{/css/styles.css}" />
+
+<title>spring mvc blog</title>
+</head>
+<body><header th:fragment=“site-header”>
+
+<a href="index.html" th:href="@{/}">Home</a>
+<a href="user/login.html" th:href="@{/user/login}">Login</a>
+<a href="user/register.html" th:href="@{/user/register}">Register</a>
+<a href="posts/index.html" th:href="@{/posts}">Posts</a>
+<a href="posts/create.html" th:href="@{/posts/create}">Create Post</a>
+<a href="user/index.html" th:href="@{/user}">Users</a>
+<div id="logged-in-info"> <span>Hello, <b>(user)</b></span>
+<form method="post" th:action="@{/user/logout}">
+<input type="submit" value="Logout"/>
+</form>
+</div>
+
+ <ul id="messages" th:with="notifymsgs=${session[T(com.exilant.blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
+      <li th:each="msg : ${notifymsgs}" th:text="${msg.text}"
+           th:class="${#strings.toLowerCase(msg.type)}">
+           
+      </li>
+      <span th:if="${notifyMessages}" th:remove="all" th:text="${session.remove[
+          T(com.exilant.blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}"></span>
+      </ul>
+</header> 
+ 
+<h2>Please login</h2>
+<form method="post" th:object="${loginForm}">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"
+           th:value="*{username}" />
+    <span class="formError"
+          th:if="${#fields.hasErrors('username')}"
+          th:errors="*{username}">Invalid username</span>
+
+    <br />
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password"
+           th:value="*{password}"/>
+    <span class="formError"
+          th:if="${#fields.hasErrors('password')}"
+          th:errors="*{password}">Invalid password</span>
+
+    <br />
+    <input type="submit" value="Login" />
+</form>
+
+<footer th:fragment="site-footer">
+&copy; Spring MVC Blog System, 2016
+</footer></body>
+</html>
