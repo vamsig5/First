@@ -2,9 +2,12 @@ package sample;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.OptionalInt;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -14,16 +17,18 @@ public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	List<Integer> list=Arrays.asList(1,2,2,4,5,3,6,3,1);
-	list.stream().filter(i -> Collections.frequency(list, i) >1)
-	.collect(Collectors.toSet()).forEach(System.out::println);
-	Map<Integer, Long> counts =
-			list.stream().filter(i -> Collections.frequency(list, i) >1).collect(Collectors.groupingBy(e->e, (Collectors.counting())));
-	System.out.println(counts);
-//		Map<String, Integer> nameMap = new HashMap<>();
-//		nameMap.put("John",1 );
-//		Integer value = nameMap.computeIfAbsent("John", s -> s.length());
-//		System.out.println(value);
+	List<Integer> list=Arrays.asList(5,2,2,4,5,3,6,3,7);
+	OptionalInt min=list.stream().mapToInt(i->i).min();
+	System.out.println(min);
+//	list.stream().filter(i -> Collections.frequency(list, i) >1)
+//	.collect(Collectors.toSet()).forEach(System.out::println);
+//	Map<Integer, Long> counts =
+//			list.stream().filter(i -> Collections.frequency(list, i) >1).collect(Collectors.groupingBy(e->e, (Collectors.counting())));
+//	System.out.println(counts);
+		Map<String, Integer> nameMap = new HashMap<>();
+		nameMap.put("John",null );
+		Integer value = nameMap.computeIfAbsent("John", s -> s.length());
+		System.out.println(value);
 //		Function<Integer, String> intToString = Object::toString;
 //		Function<String, String> quote = s -> "'" + s + "'";
 //		 
@@ -74,7 +79,19 @@ public class Test {
 	        //Stream<String> stream = stringStream.filter(x -> "a".equals(x.toString()));
 
 	        //stream.forEach(System.out::println);
-		
+	        Map<String, Integer> map=new HashMap<>();
+	        map.put("ravi", 200);
+	        map.put("ravi", 250);
+	        for (Entry<String,Integer> entry : map.entrySet()) {
+	    		int i=entry.hashCode();
+	    		System.out.println(i);
+	    	        }
+//	        map.put("ramu", 200);
+//	        map.put("ramu", 250);
+//	        map.put("ravi", 250);
+//	        System.out.println(map);
+	        
+	        
 	}
 
 }
